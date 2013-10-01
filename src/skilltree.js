@@ -2,18 +2,18 @@
 
 	//Private utilities
 	function namespace(namespaceString) {
-    	var parts = namespaceString.split('.'),
-    		parent = window,
-    		currentPart = '';
+		var parts = namespaceString.split('.'),
+			parent = window,
+			currentPart = '';
 
-    	for(var i = 0, length = parts.length; i < length; i++) {
-    		currentPart = parts[i];
-    		parent[currentPart] = parent[currentPart] || {};
-    		parent = parent[currentPart];
-    	}
+		for(var i = 0, length = parts.length; i < length; i++) {
+			currentPart = parts[i];
+			parent[currentPart] = parent[currentPart] || {};
+			parent = parent[currentPart];
+		}
 
-    	return parent;
-    }
+		return parent;
+	}
 	function prettyJoin(array) {
 		if(array.length >2) array = [array.slice(0,array.length-1).join(', '), array[array.length-1]];
 		return array.join(' and ');
@@ -232,7 +232,7 @@
 			});
 
 			window.onhashchange = function () {
-			    self.useHash(window.location.hash.substr(1));
+				self.useHash(window.location.hash.substr(1));
 			};
 
 			//Launch
