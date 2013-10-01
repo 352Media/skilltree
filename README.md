@@ -14,10 +14,13 @@ The */src* folder contains a file called *skilltree.js*. You can use a compiler 
 
 ###What's *not* in here?
 * Any server side code or database stuff. We're keeping it simple!
-* Graphical source files (yet). I'm open to ideas on how to handle the dependency arrows, provided it doesn't look lame.
+* Styling. I'm open to ideas on how to handle the skill positions and dependency arrows, provided it doesn't look lame and still gives the designer flexibility. A secondary optional class for auto-positioning might be a decent solution...
 
 ###Demos
 The */demos* folder contains */dungeons-and-developers*, which is probably what brought you here. I've split it out with the hope that you'll be able to use the skilltree script independendently for your own project, and even add your own to the demos folder, if you wish. 
 
 **Please do, I'd love to see what you make!**
 
+##License
+
+MIT license - [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
