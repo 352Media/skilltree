@@ -792,7 +792,7 @@
 		{
 			id: 26
 			, title: 'Web Development Mastery'
-			, dependsOn: [4, 5, 10, 15, 22, 25]
+			, dependsOn: [4, 7, 10, 15, 22, 25]
             , links: [
                 {
                     label: 'Web Development Wiki'
