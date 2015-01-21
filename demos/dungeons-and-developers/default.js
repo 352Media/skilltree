@@ -77,7 +77,7 @@
 		{
 			id: 1
 			, title: 'HTML'
-			, description: 'The main language for creating web pages, HTML is written in the form of tags enclosed in angle brackets (like <html>).'
+			, description: 'The main language for creating web pages, HTML is written in the form of tags enclosed in angle brackets (like &lt;html&gt;).'
 			, rankDescriptions: [
 				'You understand how to create and view a basic web page.'
 				, 'You understand how to link pages together, design multi-column layouts, and work with form fields and media elements.'
@@ -366,7 +366,7 @@
                     , url: 'http://en.wikipedia.org/wiki/Server-side_scripting'
                 }
             ]
-            , description: 'Developing items (code) that executes on the server (server-side) instead of the user&raquo;s (client&raquo;s) machine.'
+            , description: 'Developing items (code) that executes on the server (server-side) instead of the user\'s (client\'s) machine.'
 			, stats: [
 				{
 					title: 'Strength'
@@ -772,7 +772,7 @@
             ]
 			, maxPoints: 2
             , rankDescriptions: [
-                'You minify your public-facing files and serve compressed files to save bandwidth and improve your site&raquo;s speed.'
+                'You minify your public-facing files and serve compressed files to save bandwidth and improve your site\'s speed.'
                 , 'You secure sensitive traffic over HTTPS using an SSL certificate.'
             ]
             , description: 'Before sharing your application with the world, follow the best practices for security and performance on the server.'
