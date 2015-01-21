@@ -366,7 +366,7 @@
                     , url: 'http://en.wikipedia.org/wiki/Server-side_scripting'
                 }
             ]
-            , description: 'Developing items (code) that executes on the server (server-side) instead of the user&raquo;s (client&raquo;s) machine.'
+            , description: 'Developing items (code) that executes on the server (server-side) instead of the user\'s (client\'s) machine.'
 			, stats: [
 				{
 					title: 'Strength'
@@ -772,7 +772,7 @@
             ]
 			, maxPoints: 2
             , rankDescriptions: [
-                'You minify your public-facing files and serve compressed files to save bandwidth and improve your site&raquo;s speed.'
+                'You minify your public-facing files and serve compressed files to save bandwidth and improve your site\'s speed.'
                 , 'You secure sensitive traffic over HTTPS using an SSL certificate.'
             ]
             , description: 'Before sharing your application with the world, follow the best practices for security and performance on the server.'
