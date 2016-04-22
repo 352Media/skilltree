@@ -18,6 +18,12 @@
 		if(array.length >2) array = [array.slice(0,array.length-1).join(', '), array[array.length-1]];
 		return array.join(' and ');
 	}
+	// A deep cloner that only works for simple objects.
+	// Invalid for cloning objects with functions or classes (including Date).
+	function simpleDeepClone(src) {
+		if (!src) { return src; }
+		return JSON.parse(JSON.stringify(src));
+	}
 
 	//Custom binding handlers
 	ko.bindingHandlers.rightClick = {
@@ -94,7 +100,7 @@
 			});
 			self.stats = ko.computed(function(){
 				//set some defaults
-				var totals = e.defaultStats || {};
+				var totals = simpleDeepClone(e.defaultStats) || {};
 				//get all the skill name/value pairs and add/create them, using the stat name as the index
 				ko.utils.arrayForEach(self.skills(), function(skill){
 					var p = skill.points();
