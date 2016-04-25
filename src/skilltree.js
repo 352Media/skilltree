@@ -238,11 +238,11 @@
 			});
 
 			window.onhashchange = function () {
-				self.useHash(window.location.hash.substr(1));
+				self.useHash(decodeURI(window.location.hash.substr(1)));
 			};
 
 			//Launch
-			var currentHash = window.location.hash.substr(1);
+			var currentHash = decodeURI(window.location.hash.substr(1));
 			self.isOpen(currentHash != ''); //If there is a hash, open the skill tree by default
 			self.useHash(currentHash);
 
