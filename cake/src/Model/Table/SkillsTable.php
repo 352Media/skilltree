@@ -43,7 +43,7 @@ class SkillsTable extends Table
 
         $this->belongsTo('Talents', [
             'foreignKey' => 'talent_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->hasMany('Links', [
             'foreignKey' => 'skill_id'
