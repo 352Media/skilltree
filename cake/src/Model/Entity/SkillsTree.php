@@ -7,14 +7,16 @@ use Cake\ORM\Entity;
  * SkillsTree Entity
  *
  * @property string $id
- * @property int $parent_id
+ * @property string $parent_id
  * @property int $lft
  * @property int $rght
- * @property int $skill_id
+ * @property string $skill_id
+ * @property int $level
+ * @property string $name
  *
- * @property \App\Model\Entity\ParentSkillsTree $parent_skills_tree
+ * @property \App\Model\Entity\SkillsTree $parent_skills_tree
  * @property \App\Model\Entity\Skill $skill
- * @property \App\Model\Entity\ChildSkillsTree[] $child_skills_tree
+ * @property \App\Model\Entity\SkillsTree[] $child_skills_tree
  */
 class SkillsTree extends Entity
 {

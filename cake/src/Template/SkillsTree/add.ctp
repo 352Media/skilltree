@@ -15,6 +15,7 @@
         <?php
             echo $this->Form->input('parent_id', ['options' => $parentSkillsTree, 'empty' => true]);
             echo $this->Form->input('skill_id', ['options' => $skills]);
+            echo $this->Form->input('name');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

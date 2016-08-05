@@ -40,10 +40,6 @@ class SkillsTreeTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->addBehavior('Tree', [
-            'level' => 'level', // Defaults to null, i.e. no level saving
-        ]);
-
         $this->belongsTo('ParentSkillsTree', [
             'className' => 'SkillsTree',
             'foreignKey' => 'parent_id'
@@ -55,6 +51,9 @@ class SkillsTreeTable extends Table
         $this->hasMany('ChildSkillsTree', [
             'className' => 'SkillsTree',
             'foreignKey' => 'parent_id'
+        ]);
+        $this->addBehavior('Tree', [
+            'level' => 'level', // Defaults to null, i.e. no level saving
         ]);
     }
 
@@ -70,15 +69,9 @@ class SkillsTreeTable extends Table
             ->uuid('id')
             ->allowEmpty('id', 'create');
 
-        // $validator
-        //     ->integer('lft')
-        //     ->requirePresence('lft', 'create')
-        //     ->notEmpty('lft');
-
-        // $validator
-        //     ->integer('rght')
-        //     ->requirePresence('rght', 'create')
-        //     ->notEmpty('rght');
+        $validator
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         return $validator;
     }

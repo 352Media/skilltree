@@ -7,7 +7,7 @@
 #
 # Host: snotra (MySQL 5.5.50-0ubuntu0.12.04.1)
 # Database: dnd
-# Generation Time: 2016-08-05 12:38:26 +0000
+# Generation Time: 2016-08-05 13:24:54 +0000
 # ************************************************************
 
 
@@ -91,6 +91,7 @@ CREATE TABLE `skills_tree` (
   `rght` int(11) NOT NULL,
   `skill_id` char(36) NOT NULL DEFAULT '',
   `level` int(11) DEFAULT NULL,
+  `name` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
