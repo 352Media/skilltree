@@ -46,7 +46,7 @@ class SkillsTreeTable extends Table
         ]);
         $this->belongsTo('Skills', [
             'foreignKey' => 'skill_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->hasMany('ChildSkillsTree', [
             'className' => 'SkillsTree',
