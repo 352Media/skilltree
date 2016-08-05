@@ -40,7 +40,9 @@ class SkillsTreeTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->addBehavior('Tree');
+        $this->addBehavior('Tree', [
+            'level' => 'level', // Defaults to null, i.e. no level saving
+        ]);
 
         $this->belongsTo('ParentSkillsTree', [
             'className' => 'SkillsTree',

@@ -28,6 +28,21 @@ class SkillsTreeController extends AppController
     }
 
     /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function listTree()
+    {
+        
+        $skillsTree = $this->SkillsTree->find('threaded')->toArray();;
+        debug($skillsTree);
+        exit;
+        $this->set(compact('skillsTree'));
+        $this->set('_serialize', ['skillsTree']);
+    }
+
+    /**
      * View method
      *
      * @param string|null $id Skills Tree id.
