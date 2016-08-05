@@ -1,30 +1,11 @@
-<<<<<<< HEAD
-var userJsonUrl = '/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a.json';
-var userSaveUrl = '/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a';
+var userJsonUrl = '/users/view/';
 var skillJsonUrl = '/skills.json';
-var skillTreeJsonUrl = '/skills-tree.json';
+var skillTreeJsonUrl = '/skills-tree/listTree.json';
 
 var skillTree = {
-    availableSkills: ko.observable({
-        1: {
-            name: 'First Skill',
-        },
-        2: {
-            name: 'Second Skill',
-            depends: 1,
-        },
-        3: {
-            name: 'Third Skill',
-            depends: 1,
-        },
-        4: {
-            name: 'Fourth Skill',
-            depends: 3,
-        }
-    }),
-    treeStructure: ko.observable({
-
-    }),
+    availableSkills: ko.observable(),
+    treeStructure: ko.observable(),
+    userId: '70363db3-80fb-449e-8b5f-1cc590a4bf9a',
     character: {
         userId: ko.observable(0),
         name: ko.observable('Your Name'),
@@ -41,7 +22,7 @@ var skillTree = {
             3: 0
         }),
         populateFromJson: function() {
-            $.getJSON('/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a.json', function(response) {
+            $.getJSON(userJsonUrl + skillTree.userId + '.json', function(response) {
                 userJson = response.user;
                 skillTree.character.userId(userJson.id);
                 skillTree.character.name(userJson.username);
@@ -77,6 +58,16 @@ var skillTree = {
             skillsTree = response.skillsTree;
             skillTree.treeStructure(skillsTree);
         });
-        console.log();
+    },
+    addRank: function(id) {
+        if (typeof skillTree.character.skills()[id] === "undefined") {
+            skillTree.character.skills()[id] = 0;
+        }
+        skillTree.character.skills()[id]++;
+    },
+    removeRank: function(id) {
+        if (typeof skillTree.character.skills()[id] != "undefined" && typeof skillTree.character.skills()[id] != 0) {
+            skillTree.character.skills()[id]--;
+        }
     }
 }
