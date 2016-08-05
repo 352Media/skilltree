@@ -70,6 +70,10 @@ class SkillsTreeTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
+            ->uuid('skill_id')
+            ->allowEmpty('skill_id');
+
+        $validator
             ->requirePresence('name')
             ->notEmpty('name');
 
@@ -85,8 +89,8 @@ class SkillsTreeTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        //$rules->add($rules->existsIn(['parent_id'], 'ParentSkillsTree'));
-        //$rules->add($rules->existsIn(['skill_id'], 'Skills'));
+        $rules->add($rules->existsIn(['parent_id'], 'ParentSkillsTree'));
+        $rules->add($rules->existsIn(['skill_id', 'skill_id'], 'Skills', ['allowNullableNulls' => true]));
 
         return $rules;
     }
