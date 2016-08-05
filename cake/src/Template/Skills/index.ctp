@@ -21,7 +21,6 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('title') ?></th>
                 <th><?= $this->Paginator->sort('talent_id') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
@@ -30,7 +29,6 @@
         <tbody>
             <?php foreach ($skills as $skill): ?>
             <tr>
-                <td><?= h($skill->id) ?></td>
                 <td><?= h($skill->title) ?></td>
                 <td><?= $skill->has('talent') ? $this->Html->link($skill->talent->name, ['controller' => 'Talents', 'action' => 'view', $skill->talent->id]) : '' ?></td>
                 <td class="actions">
