@@ -55,6 +55,8 @@ class AppController extends Controller
                 'home'
             ]
         ]);
+
+        $this->loadComponent('RequestHandler');
     }
 
     /**

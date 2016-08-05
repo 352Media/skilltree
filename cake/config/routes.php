@@ -40,9 +40,11 @@ use Cake\Routing\Router;
  * `:action` markers.
  *
  */
+
 Router::defaultRouteClass('DashedRoute');
 
 Router::scope('/', function (RouteBuilder $routes) {
+    $routes->extensions(['json', 'xml']);
     /**
      * Here, we are connecting '/' (base path) to a controller called 'Pages',
      * its action called 'display', and we pass a param to select the view file
