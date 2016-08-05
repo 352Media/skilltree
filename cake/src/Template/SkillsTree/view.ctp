@@ -3,7 +3,7 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Skills Tree'), ['action' => 'edit', $skillsTree->id]) ?> </li>
         <li><?= $this->Form->postLink(__('Delete Skills Tree'), ['action' => 'delete', $skillsTree->id], ['confirm' => __('Are you sure you want to delete # {0}?', $skillsTree->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Skills Tree'), ['action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('List Nodes'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Skills Tree'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Parent Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Parent Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'add']) ?> </li>
