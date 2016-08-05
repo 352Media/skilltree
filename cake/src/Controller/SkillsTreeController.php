@@ -71,7 +71,6 @@ class SkillsTreeController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             } else {
-                debug($skillsTree->errors());
                 $this->Flash->error(__('The skills tree could not be saved. Please, try again.'));
             }
         }
@@ -107,7 +106,10 @@ class SkillsTreeController extends AppController
                 $this->Flash->error(__('The skills tree could not be saved. Please, try again.'));
             }
         }
-        $parentSkillsTree = $this->SkillsTree->ParentSkillsTree->find('list', ['limit' => 200]);
+        $parentSkillsTree = $this->SkillsTree->ParentSkillsTree->find('list', [
+            'limit' => 200, 'keyField' => 'id',
+            'valueField' => 'name'
+        ]);
         $skills = $this->SkillsTree->Skills->find('list', ['limit' => 200]);
         $this->set(compact('skillsTree', 'parentSkillsTree', 'skills'));
         $this->set('_serialize', ['skillsTree']);
