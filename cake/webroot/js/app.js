@@ -1,79 +1,45 @@
-var userJsonUrl = 'http://localhost:8765/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a.json';
-var userSaveUrl = 'http://localhost:8765/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a';
+var userJsonUrl = '/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a.json';
+var userSaveUrl = '/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a';
+var skillJsonUrl = '/skills.json';
+var skillTreeJsonUrl = '/skills-tree.json';
 
 var skillTree = {
-    availableSkills: {
+    availableSkills: ko.observable({
         1: {
             name: 'First Skill',
-            attributes: {
-                1: 10
-            }
         },
         2: {
             name: 'Second Skill',
             depends: 1,
-            attributes: {
-                1: 10,
-                2: 5
-            }
         },
         3: {
             name: 'Third Skill',
             depends: 1,
-            attributes: {
-                1: 5,
-                2: 15
-            }
         },
         4: {
             name: 'Fourth Skill',
             depends: 3,
-            attributes: {
-                3: 20
-            }
         }
-    },
-    availableBadges: {
-        1: {
-            name: 'Beginner',
-            skillDepends: [1]
-        },
-        2: {
-            name: 'Ranking Up',
-            skillDepends: [2,3]
-        },
-        3: {
-            name: 'Mastery',
-            skillDepends: [2,4]
-        }
-    },
-    availableAttributes: {
-        1: {
-            name: 'Startery'
-        },
-        2: {
-            name: 'Ace-ness'
-        },
-        3: {
-            name: 'God-ness (Carl-ness)'
-        }
-    },
+    }),
+    treeStructure: ko.observable({
+
+    }),
     character: {
         userId: ko.observable(0),
         name: ko.observable('Your Name'),
-        skills: {
-            1: ko.observable(0),
-            2: ko.observable(0),
-            3: ko.observable(0),
-            4: ko.observable(0)
-        },
-        badges: [1],
-        stats: {
-            1: ko.observable(0),
-            2: ko.observable(0),
-            3: ko.observable(0)
-        },
-        populateFromJson: function($json) {
+        skills: ko.observable({
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0
+        }),
+        badges: ko.observable([1]),
+        stats: ko.observable({
+            1: 0,
+            2: 0,
+            3: 0
+        }),
+        populateFromJson: function() {
             $.getJSON('/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a.json', function(response) {
                 userJson = response.user;
                 skillTree.character.userId(userJson.id);
@@ -94,5 +60,22 @@ var skillTree = {
                 url:userSaveUrl
             });
         }
+    },
+    populateFromJson: function() {
+        $.getJSON(skillJsonUrl, function(response) {
+            var skillsList = new Object;
+            skillsJson = response.skills;
+            for (skillId in skillsJson) {
+                skillsList[skillsJson[skillId].id] = skillsJson[skillId];
+            }
+            skillTree.availableSkills(skillsList);
+        });
+
+        $.getJSON(skillTreeJsonUrl, function(response) {
+            var skillsTree = new Object;
+            skillsTree = response.skillsTree;
+            skillTree.treeStructure(skillsTree);
+        });
+        console.log();
     }
 }
