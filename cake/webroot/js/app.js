@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var userJsonUrl = '/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a.json';
 var userSaveUrl = '/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a';
 var skillJsonUrl = '/skills.json';
