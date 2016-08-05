@@ -1,6 +1,6 @@
 var userJsonUrl = '/users/view/';
 var skillJsonUrl = '/skills.json';
-var skillTreeJsonUrl = '/skills-tree.json';
+var skillTreeJsonUrl = '/skills-tree/listTree.json';
 
 var skillTree = {
     availableSkills: ko.observable({
