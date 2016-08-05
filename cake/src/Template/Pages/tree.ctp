@@ -5,6 +5,7 @@
 </div>
 <div data-bind="text: character.name"></div>
 <script>
-ko.applyBindings(skillTree);
 skillTree.character.populateFromJson();
+skillTree.populateFromJson();
+ko.applyBindings(skillTree);
 </script>
