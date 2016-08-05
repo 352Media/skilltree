@@ -35,9 +35,7 @@ class SkillsTreeController extends AppController
     public function listTree()
     {
         
-        $skillsTree = $this->SkillsTree->find('threaded')->toArray();;
-        debug($skillsTree);
-        exit;
+        $skillsTree = $this->SkillsTree->find('threaded', ['contain' => ['Skills']])->toArray();;
         $this->set(compact('skillsTree'));
         $this->set('_serialize', ['skillsTree']);
     }

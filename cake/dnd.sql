@@ -7,7 +7,7 @@
 #
 # Host: snotra (MySQL 5.5.50-0ubuntu0.12.04.1)
 # Database: dnd
-# Generation Time: 2016-08-05 11:21:30 +0000
+# Generation Time: 2016-08-05 12:38:26 +0000
 # ************************************************************
 
 
@@ -59,6 +59,7 @@ CREATE TABLE `skills` (
   `title` varchar(255) NOT NULL DEFAULT '',
   `description` text NOT NULL,
   `talent_id` char(36) NOT NULL DEFAULT '',
+  `rank_count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -85,10 +86,11 @@ DROP TABLE IF EXISTS `skills_tree`;
 
 CREATE TABLE `skills_tree` (
   `id` char(36) NOT NULL DEFAULT '',
-  `parent_id` int(11) DEFAULT NULL,
+  `parent_id` char(36) DEFAULT NULL,
   `lft` int(11) NOT NULL,
   `rght` int(11) NOT NULL,
   `skill_id` char(36) NOT NULL DEFAULT '',
+  `level` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -127,8 +129,11 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` char(36) NOT NULL DEFAULT '',
-  `email` varchar(255) NOT NULL DEFAULT '',
+  `username` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
+  `role` varchar(20) NOT NULL DEFAULT '',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
