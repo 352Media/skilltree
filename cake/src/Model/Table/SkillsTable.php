@@ -109,7 +109,7 @@ class SkillsTable extends Table
         $validator->provider('proffer', 'Proffer\Model\Validation\ProfferRules');
 
         // Set the thumbnail resize dimensions
-        $validator->add('image', 'proffer', [
+        $validator->add('photo', 'proffer', [
             'rule' => ['dimensions', [
                 'min' => ['w' => 50, 'h' => 50],
                 'max' => ['w' => 3000, 'h' => 3000]
@@ -118,7 +118,7 @@ class SkillsTable extends Table
             'provider' => 'proffer'
         ]);
 
-        $validator->allowEmpty('image');
+        $validator->allowEmpty('photo');
 
         return $validator;
     }

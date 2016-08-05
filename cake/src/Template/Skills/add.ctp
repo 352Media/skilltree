@@ -23,7 +23,7 @@
         <?php
             echo $this->Form->input('title');
             echo $this->Form->input('description');
-            echo $this->Form->input('image', ['type' => 'file']);
+            echo $this->Form->input('photo', ['type' => 'file']);
             echo $this->Form->input('talent_id', ['options' => $talents]);
             echo $this->Form->input('stats._ids', ['options' => $stats]);
             echo $this->Form->input('users._ids', ['options' => $users]);
