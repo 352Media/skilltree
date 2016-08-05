@@ -71,8 +71,9 @@
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
 }
-.tree li div:hover, .tree li div:hover+ul li div {
+.tree li div:hover {
     background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+    cursor: pointer;
 }
 .tree li div:hover+ul li::after,
 .tree li div:hover+ul li::before,
