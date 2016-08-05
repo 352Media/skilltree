@@ -11,8 +11,8 @@
         <li><?= $this->Html->link(__('New Link'), ['controller' => 'Links', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ranks'), ['controller' => 'Ranks', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Rank'), ['controller' => 'Ranks', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Nodes'), ['controller' => 'SkillsTree', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Node'), ['controller' => 'SkillsTree', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Stats'), ['controller' => 'Stats', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Stat'), ['controller' => 'Stats', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>

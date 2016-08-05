@@ -40,21 +40,20 @@ class SkillsTreeTable extends Table
         $this->displayField('id');
         $this->primaryKey('id');
 
-        $this->addBehavior('Tree', [
-            'level' => 'level', // Defaults to null, i.e. no level saving
-        ]);
-
         $this->belongsTo('ParentSkillsTree', [
             'className' => 'SkillsTree',
             'foreignKey' => 'parent_id'
         ]);
         $this->belongsTo('Skills', [
             'foreignKey' => 'skill_id',
-            'joinType' => 'INNER'
+            'joinType' => 'LEFT'
         ]);
         $this->hasMany('ChildSkillsTree', [
             'className' => 'SkillsTree',
             'foreignKey' => 'parent_id'
+        ]);
+        $this->addBehavior('Tree', [
+            'level' => 'level', // Defaults to null, i.e. no level saving
         ]);
     }
 
@@ -70,15 +69,9 @@ class SkillsTreeTable extends Table
             ->uuid('id')
             ->allowEmpty('id', 'create');
 
-        // $validator
-        //     ->integer('lft')
-        //     ->requirePresence('lft', 'create')
-        //     ->notEmpty('lft');
-
-        // $validator
-        //     ->integer('rght')
-        //     ->requirePresence('rght', 'create')
-        //     ->notEmpty('rght');
+        $validator
+            ->requirePresence('name')
+            ->notEmpty('name');
 
         return $validator;
     }
@@ -92,8 +85,8 @@ class SkillsTreeTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['parent_id'], 'ParentSkillsTree'));
-        $rules->add($rules->existsIn(['skill_id'], 'Skills'));
+        //$rules->add($rules->existsIn(['parent_id'], 'ParentSkillsTree'));
+        //$rules->add($rules->existsIn(['skill_id'], 'Skills'));
 
         return $rules;
     }
