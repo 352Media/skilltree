@@ -1,7 +1,7 @@
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Skills Tree'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Nodes'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Parent Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Parent Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Skills'), ['controller' => 'Skills', 'action' => 'index']) ?></li>

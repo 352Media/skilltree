@@ -7,7 +7,7 @@
                 ['confirm' => __('Are you sure you want to delete # {0}?', $skillsTree->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Skills Tree'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Nodes'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Parent Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Parent Skills Tree'), ['controller' => 'SkillsTree', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Skills'), ['controller' => 'Skills', 'action' => 'index']) ?></li>
