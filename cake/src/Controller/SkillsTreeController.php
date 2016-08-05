@@ -27,6 +27,18 @@ class SkillsTreeController extends AppController
         $this->set('_serialize', ['skillsTree']);
     }
 
+        /**
+     * Index method
+     *
+     * @return \Cake\Network\Response|null
+     */
+    public function listTree()
+    {   
+        $skillsTree = $this->SkillsTree->find('threaded', ['contain' => ['Skills']])->toArray();;
+        $this->set(compact('skillsTree'));
+        $this->set('_serialize', ['skillsTree']);
+    }
+
     /**
      * View method
      *
@@ -67,7 +79,7 @@ class SkillsTreeController extends AppController
             'limit' => 200, 'keyField' => 'id',
             'valueField' => 'name'
         ]);
-        
+
         $skills = $this->SkillsTree->Skills->find('list', ['limit' => 200]);
         $this->set(compact('skillsTree', 'parentSkillsTree', 'skills'));
         $this->set('_serialize', ['skillsTree']);
@@ -92,6 +104,8 @@ class SkillsTreeController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             } else {
+                debug($skillsTree->errors());
+                exit;
                 $this->Flash->error(__('The skills tree could not be saved. Please, try again.'));
             }
         }
