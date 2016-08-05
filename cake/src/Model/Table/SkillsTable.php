@@ -64,9 +64,9 @@ class SkillsTable extends Table
             'targetForeignKey' => 'user_id',
             'joinTable' => 'users_skills'
         ]);
-        $this->addBehavior('CounterCache', [
-            'Ranks' => ['rank_count']
-        ]);
+        // $this->addBehavior('CounterCache', [
+        //     'Ranks' => ['rank_count']
+        // ]);
     }
 
     /**
