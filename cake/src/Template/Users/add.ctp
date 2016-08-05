@@ -13,8 +13,9 @@
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
-            echo $this->Form->input('email');
+            echo $this->Form->input('username');
             echo $this->Form->input('password');
+            echo $this->Form->input('role');
             echo $this->Form->input('skills._ids', ['options' => $skills]);
             echo $this->Form->input('stats._ids', ['options' => $stats]);
         ?>

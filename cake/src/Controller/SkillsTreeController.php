@@ -87,6 +87,8 @@ class SkillsTreeController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             } else {
+                debug($skillsTree->errors());
+                exit;
                 $this->Flash->error(__('The skills tree could not be saved. Please, try again.'));
             }
         }

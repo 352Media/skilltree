@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
-# Host: 127.0.0.1 (MySQL 5.7.11)
+# Host: snotra (MySQL 5.5.50-0ubuntu0.12.04.1)
 # Database: dnd
-# Generation Time: 2016-08-05 10:03:56 +0000
+# Generation Time: 2016-08-05 11:21:30 +0000
 # ************************************************************
 
 
@@ -88,7 +88,7 @@ CREATE TABLE `skills_tree` (
   `parent_id` int(11) DEFAULT NULL,
   `lft` int(11) NOT NULL,
   `rght` int(11) NOT NULL,
-  `skill_id` int(11) NOT NULL,
+  `skill_id` char(36) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

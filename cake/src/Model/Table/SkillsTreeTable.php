@@ -68,15 +68,15 @@ class SkillsTreeTable extends Table
             ->uuid('id')
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->integer('lft')
-            ->requirePresence('lft', 'create')
-            ->notEmpty('lft');
+        // $validator
+        //     ->integer('lft')
+        //     ->requirePresence('lft', 'create')
+        //     ->notEmpty('lft');
 
-        $validator
-            ->integer('rght')
-            ->requirePresence('rght', 'create')
-            ->notEmpty('rght');
+        // $validator
+        //     ->integer('rght')
+        //     ->requirePresence('rght', 'create')
+        //     ->notEmpty('rght');
 
         return $validator;
     }
