@@ -13,21 +13,17 @@
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
-                <th><?= $this->Paginator->sort('id') ?></th>
                 <th><?= $this->Paginator->sort('username') ?></th>
-                <th><?= $this->Paginator->sort('password') ?></th>
                 <th><?= $this->Paginator->sort('role') ?></th>
                 <th><?= $this->Paginator->sort('created') ?></th>
                 <th><?= $this->Paginator->sort('modified') ?></th>
                 <th class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody style="word-break: break-word;">
             <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= h($user->id) ?></td>
                 <td><?= h($user->username) ?></td>
-                <td><?= h($user->password) ?></td>
                 <td><?= h($user->role) ?></td>
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->modified) ?></td>
