@@ -15,7 +15,7 @@ $( document ).ready(function() {
 </script>
 <script id="skillTemplate" type="text/html">
     <li class="skillNode">
-        <div data-bind="text: name"></div>
+        <div data-bind="text: name, click: skillTree.addRank.bind(id), event: { contextmenu: skillTree.removeRank.bind(id) }"></div>
         <!-- ko if: children.length > 0 -->
         <ul>
             <li data-bind="template: { name: 'skillTemplate', foreach: children }">
