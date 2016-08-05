@@ -59,7 +59,7 @@ var skillTree = {
         }
     },
     character: {
-        userId: 0,
+        userId: ko.observable(0),
         name: ko.observable('Your Name'),
         skills: {
             1: ko.observable(0),
@@ -76,11 +76,11 @@ var skillTree = {
         populateFromJson: function($json) {
             $.getJSON('/users/view/70363db3-80fb-449e-8b5f-1cc590a4bf9a.json', function(response) {
                 userJson = response.user;
-                skillTree.character.userId = userJson.id;
-                skillTree.character.name = userJson.username;
-                skillTree.character.skills = userJson.skills;
-                skillTree.character.badges = userJson.badges;
-                skillTree.character.stats = userJson.stats;
+                skillTree.character.userId(userJson.id);
+                skillTree.character.name(userJson.username);
+                skillTree.character.skills(userJson.skills);
+                skillTree.character.badges(userJson.badges);
+                skillTree.character.stats(userJson.stats);
             });
         },
         saveUser: function() {
