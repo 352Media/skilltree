@@ -170,6 +170,6 @@
     </div>
     <div class="image">
         <h4><?= __('Image') ?></h4>
-        <?php echo $this->Html->image('../files/skills/image/' . $skill->get('photo_dir') . '/<prefix>_' . $skill->get('photo')); ?>
+        <?php echo $this->Html->image('../files/skills/photo/' . $skill->get('photo_dir') . '/' . $skill->get('photo')); ?>
     </div>
 </div>
